@@ -30,7 +30,6 @@ const Search = () => {
           className="cursor-pointer bg-[#3937a6]"
         />
       </form>
-      data.length===0:?
     </>
   );
 };
