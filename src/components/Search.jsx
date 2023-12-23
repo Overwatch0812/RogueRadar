@@ -51,10 +51,7 @@ const Search = () => {
           className="cursor-pointer bg-[#3937a6]"
         />
       </form>
-
-      {dataz.map((data, i) => {
-        return <List {...data} key={i} />;
-      })}
+      data.length===0:?
     </>
   );
 };
