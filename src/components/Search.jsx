@@ -20,38 +20,50 @@ const Search = () => {
   }
   return !dataz ? (
     <>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <input
-          type="text"
-          name="query"
-          id="query"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <input
-          type="submit"
-          value="Search"
-          className="cursor-pointer bg-[#3937a6]"
-        />
-      </form>
+      <div className="form flex h-6 justify-center align-middle">
+        <form onSubmit={(e) => onSubmit(e)}>
+          <input
+            className="rounded-full h-10 w-96 hover:bg-[#f1eeee] hover:drop-shadow-md border-red-700"
+            type="text"
+            name="query"
+            id="query"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <input
+            type="submit"
+            value="Search"
+            className="cursor-pointer bg-[#3937a6]"
+          />
+        </form>
+      </div>
     </>
   ) : (
     <>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <input
-          type="text"
-          name="query"
-          id="query"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <input
-          type="submit"
-          value="Search"
-          className="cursor-pointer bg-[#3937a6]"
-        />
-      </form>
-      data.length===0:?
+      <div className="form flex h-6 justify-center align-middle">
+        <form onSubmit={(e) => onSubmit(e)}>
+          <input
+            className="rounded-full h-10 w-10 hover:bg-[#f1eeee] hover:drop-shadow-md border-red-700 px-3 lg:w-20"
+            type="text"
+            name="query"
+            id="query"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <input
+            type="submit"
+            value="Search"
+            className="cursor-pointer bg-[#3937a6]"
+          />
+        </form>
+      </div>
+      {dataz.map((data, i) => {
+        return (
+          <div className="card">
+            <List {...data} key={i} />
+          </div>
+        );
+      })}
     </>
   );
 };
