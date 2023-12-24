@@ -5,11 +5,11 @@ import { search } from "../features/search/searchSlice";
 import List from "./List";
 import { Link, useNavigate } from "react-router-dom";
 import Search from "./Search";
+import Spinner from "./Spinner";
 
 const Home = () => {
   const dispatch = useDispatch();
   const { query } = useParams();
-  const [newquery, setNewQuery] = useState(query);
   const { data } = useSelector((state) => state.search);
 
   useEffect(() => {
@@ -20,7 +20,9 @@ const Home = () => {
     }
   }, [query]);
   return !data ? (
-    <>Fetching</>
+    <>
+      <Spinner />
+    </>
   ) : (
     <>
       <Search />

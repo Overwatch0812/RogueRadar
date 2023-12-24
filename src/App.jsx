@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Search />} />
-        <Route path="/:query" element={<Home />} />
+        <Route path="/:query/" element={<Home />} />
       </Routes>
       <Footer />
     </>
