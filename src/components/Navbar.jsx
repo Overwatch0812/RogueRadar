@@ -12,16 +12,5 @@ const Navbar = () => {
     </>
   );
 };
-// const Navbar = () => {
-//   const dispatch = useDispatch();
-//   const { data, isSuccess, isError, message } = useSelector(
-//     (state) => state.search
-//   );
-//   console.log(data);
-//   useEffect(() => {
-//     const data1 = dispatch(search());
-//   }, []);
-//   return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
-// };
 
 export default Navbar;

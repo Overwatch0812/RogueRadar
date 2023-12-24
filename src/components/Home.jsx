@@ -1,32 +1,32 @@
-// import React, { useState, useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { useParams } from "react-router-dom";
-// import { search } from "../features/search/searchSlice";
-// import List from "./List";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { search } from "../features/search/searchSlice";
+import List from "./List";
+import { Link, useNavigate } from "react-router-dom";
+import Search from "./Search";
 
-// const Home = () => {
-//   const dispatch = useDispatch();
-//   const [dataz, setData] = useState([]);
-//   const { query } = useParams();
-//   const { data, isSuccess, isError, message } = useSelector(
-//     (state) => state.search
-//   );
-//   useEffect(() => {
-//     dispatch(search(query)).then((e) => setData(e.payload));
-//   }, []);
-//   console.log(data);
-//   return !data === 0 ? (
-//     <>
-//       Home:
-//       <h1>Done</h1>
-//     </>
-//   ) : (
-//     <>
-//       {data.map((list) => {
-//         <List {...list} />;
-//       })}
-//     </>
-//   );
-// };
+const Home = () => {
+  const dispatch = useDispatch();
+  const { query } = useParams();
+  const [newquery, setNewQuery] = useState(query);
+  const { data } = useSelector((state) => state.search);
 
-// export default Home;
+  useEffect(() => {
+    if (query) {
+      dispatch(search(query));
+    } else {
+      alert("Pls enter search query");
+    }
+  }, [query]);
+  return (
+    <>
+      <Search />
+      {data.items.map((item) => {
+        return <List {...item} />;
+      })}
+    </>
+  );
+};
+
+export default Home;
