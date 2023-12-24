@@ -22,14 +22,6 @@ const Search = () => {
   return (
     <>
       <div className="sm:align-middle flex flex-col m-5  justify-center align-middle h-screen">
-        <div className="sm:align-middle img flex flex-col m-5 justify-center align-middle">
-          <img
-            src="src\assets\loogo.png"
-            alt=""
-            height={"260px"}
-            width={"260px"}
-          />
-        </div>
         <div className="search flex  flex-col m-5 justify-center align-middle">
           <input
             className="rounded-lg h-8"
