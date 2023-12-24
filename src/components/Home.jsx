@@ -19,7 +19,9 @@ const Home = () => {
       alert("Pls enter search query");
     }
   }, [query]);
-  return (
+  return !data ? (
+    <>Fetching</>
+  ) : (
     <>
       <Search />
       {data.items.map((item) => {
