@@ -21,7 +21,7 @@ const Search = () => {
   // }
   return (
     <>
-      <div className="sm:align-middle flex flex-col m-5  justify-center align-middle h-screen">
+      <div className="sm:align-middle flex flex-col m-5  justify-center align-middle h-50">
         <div className="search flex  flex-col m-5 justify-center align-middle">
           <input
             className="rounded-lg h-8"
