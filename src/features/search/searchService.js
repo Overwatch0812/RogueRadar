@@ -16,5 +16,5 @@ async function Searchz(query) {
     console.log(error);
   }
 }
-
+// https://www.googleapis.com/customsearch/v1?key=${APIKEY}&cx=${CX}&q=${query}&searchType=image
 export default Searchz;

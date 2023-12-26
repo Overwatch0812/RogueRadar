@@ -6,16 +6,17 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./app/store.js";
 import { PersistGate } from "redux-persist/integration/react";
 
-import { HashRouter as Router } from "react-router-dom";
+// import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <App />
         </PersistGate>
       </Provider>
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>
 );

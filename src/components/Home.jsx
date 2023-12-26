@@ -6,6 +6,7 @@ import List from "./List";
 import { Link, useNavigate } from "react-router-dom";
 import Search from "./Search";
 import Spinner from "./Spinner";
+import MiniSearch from "./MiniSearch";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const Home = () => {
     </>
   ) : (
     <>
-      <Search />
+      <MiniSearch />
       {data.items.map((item) => {
         return <List {...item} />;
       })}

@@ -4,7 +4,7 @@ import { search } from "../features/search/searchSlice";
 import { Link, useNavigate } from "react-router-dom";
 import List from "./List";
 
-const Search = () => {
+const MiniSearch = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
@@ -14,24 +14,24 @@ const Search = () => {
   // function onSubmit(e) {
   //   e.preventDefault();
   //   if (query) {
-  //     dispatch(search(query)).then((e) => setData(e.payload.items));
+  //     dispatch(MiniSearch(query)).then((e) => setData(e.payload.items));
   //   } else {
-  //     alert("Pls enter search query");
+  //     alert("Pls enter MiniSearch query");
   //   }
   // }
   return (
     <>
-      <div className="flex flex-col m-5 justify-center align-middle h-50">
-        <div className="flex flex-col  md:flex-row m-5 justify-center align-middle">
+      <div className="flex justify-center flex-col">
+        <div className="flex flex-row justify-center align-middle">
           <img
-            className="md:w-96 sm:w-50"
+            className="m-5 w-44 "
             src="https://res.cloudinary.com/dkg89jcmm/image/upload/v1703620192/logo2_c2hjdi.png"
             alt=""
           />
         </div>
-        <div className="flex  flex-col md:flex-row m-5 md:m-0 md: justify-center md:gap-8 align-middle">
+        <div className="flex flex-col justify-center align-middle">
           <input
-            className="rounded-lg h-10 md:w-96"
+            className=" w-56 self-center h-8 rounded-lg mx-10"
             type="text"
             name="query"
             id="query"
@@ -39,10 +39,10 @@ const Search = () => {
             onChange={(e) => setQuery(e.target.value)}
           />
           <Link
-            className="bg-[#a9bcd7] text-center h-10 p-2 rounded-full hover:bg-[#88a0c2] cursor-pointer m-6 md:w-60 md:m-0"
+            className=" w-48 self-center bg-[#a9bcd7] text-center h-8 p-1 rounded-full hover:bg-[#88a0c2] cursor-pointer m-6 md:w-60 md:m-0"
             to={"/" + query}
           >
-            Search
+            MiniSearch
           </Link>
         </div>
       </div>
@@ -50,4 +50,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default MiniSearch;
